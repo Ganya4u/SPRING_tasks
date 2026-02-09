@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="sub1" class="com.ty.pojo.Subject">
+		<property name="id" value="1" />
+		<property name="name" value="Math" />
+	</bean>
+
+	<bean id="sub2" class="com.ty.pojo.Subject">
+		<property name="id" value="2" />
+		<property name="name" value="Physics" />
+	</bean>
+	
+	
+	
+	<bean id="student" class="com.ty.pojo.Student">
+    <property name="name" value="Rahul"/>
+
+    <property name="subjects">
+        <list>
+            <ref bean="sub1"/>
+            <ref bean="sub2"/>
+        </list>
+    </property>
+</bean>
+
+<bean id="shop" class="com.ty.pojo.Shop">
+    <property name="name" value="Stationary Shop"/>
+
+    <property name="items">
+        <map>
+            <entry key="Pen" value="10"/>
+            <entry key="Book" value="50"/>
+            <entry key="Bag" value="500"/>
+        </map>
+    </property>
+</bean>
+
+
+
+
+</beans>

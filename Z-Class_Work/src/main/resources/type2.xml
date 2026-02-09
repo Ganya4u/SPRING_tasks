@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+            
+            
+ <!-- Subjects -->
+    <bean id="sub1" class="com.ty.pojo2.Subject">
+        <constructor-arg value="1"/>
+        <constructor-arg value="Math"/>
+    </bean>
+
+    <bean id="sub2" class="com.ty.pojo2.Subject">
+        <constructor-arg value="2"/>
+        <constructor-arg value="Physics"/>
+    </bean>
+
+
+
+	
+	 <!-- Student with List of Subjects -->
+	 
+    <bean id="student" class="com.ty.pojo2.Student">
+        <constructor-arg value="Rahul"/>
+        <constructor-arg>
+            <list>
+                <ref bean="sub1"/>
+                <ref bean="sub2"/>
+            </list>
+        </constructor-arg>
+    </bean>
+	
+	
+	
+	<!-- Shop with Map of Items -->
+<bean id="shop" class="com.ty.pojo2.Shop">
+    <constructor-arg value="Stationary Shop"/>
+    <constructor-arg>
+        <map>
+            <entry key="Pen" value="10"/>
+            <entry key="Book" value="50"/>
+            <entry key="Bag" value="500"/>
+        </map>
+    </constructor-arg>
+</bean>
+
+
+
+
+</beans>
