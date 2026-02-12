@@ -21,8 +21,12 @@ public class Test {
 		
 		Employee e= (Employee)app.getBean(Employee.class);
 		e.display();
+
+		Student stu = (Student)app.getBean(Student.class);
+		stu.display();
 	     
 
 	}
 
 }
+
